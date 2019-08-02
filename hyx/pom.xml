@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hdw</groupId>
+    <artifactId>dubbo</artifactId>
+    <version>1.3.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common</module>
+        <module>monitor</module>
+        <module>upms-mapper</module>
+        <module>upms-api</module>
+        <module>upms-service</module>
+        <module>upms-web</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven-compiler-plugin.version>3.6.2</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+        <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+
+        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <spring.platform.version>Cairo-SR8</spring.platform.version>
+        <spring-cloud-alibaba.version>0.2.2.RELEASE</spring-cloud-alibaba.version>
+        <!-- springboot-admin -->
+        <spring-boot-admin.version>2.1.4</spring-boot-admin.version>
+        <!-- dubbo -->
+        <dubbo.version>2.6.5</dubbo.version>
+        <dubbo-spring-boot-starter.version>0.2.1.RELEASE</dubbo-spring-boot-starter.version>
+        <curator-framework.version>4.2.0</curator-framework.version>
+
+        <!-- commons-io -->
+        <commons-lang3.version>3.1</commons-lang3.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
+        <commons-codec.version>1.9</commons-codec.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <commons-net.version>3.6</commons-net.version>
+        <commons-text.version>1.6</commons-text.version>
+        <commons-pool2.version>2.5.0</commons-pool2.version>
+        <httpclient.version>4.5.3</httpclient.version>
+        <!-- pinyin4j -->
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <!-- zxing -->
+        <zxing.core.version>3.3.1</zxing.core.version>
+        <!-- dom4j -->
+        <dom4j.version>1.6.1</dom4j.version>
+        <!-- poi -->
+        <poi.version>4.0.1</poi.version>
+        <!-- pdfbox -->
+        <pdfbox.version>2.0.12</pdfbox.version>
+        <!-- hutool -->
+        <hutool.version>4.3.1</hutool.version>
+        <!-- guava -->
+        <guava.version>27.1-jre</guava.version>
+        <!-- fastjson -->
+        <fastjson.version>1.2.54</fastjson.version>
+        <!-- fastdfs-spring-boot-starter -->
+        <fastdfs-spring-boot-starter.version>0.2.0</fastdfs-spring-boot-starter.version>
+        <!-- springfox.swagger2 -->
+        <springfox.swagger2.version>2.9.2</springfox.swagger2.version>
+
+        <!-- mybatis-plus -->
+        <druid-spring-boot-starter.version>1.1.16</druid-spring-boot-starter.version>
+        <mybatis-plus-boot-starter.version>3.1.1</mybatis-plus-boot-starter.version>
+        <dynamic-datasource-spring-boot-starter.version>2.5.4</dynamic-datasource-spring-boot-starter.version>
+
+        <!-- shiro -->
+        <shiro.version>1.4.0</shiro.version>
+        <pac4j.version>3.4.0</pac4j.version>
+        <buji.version>4.0.0</buji.version>
+        <jjwt.version>0.9.1</jjwt.version>
+
+        <thymeleaf-layout-dialect.version>2.3.0</thymeleaf-layout-dialect.version>
+        <thymeleaf-extras-shiro.version>2.0.0</thymeleaf-extras-shiro.version>
+
+        <jaxb-api.version>2.3.1</jaxb-api.version>
+
+        <common.version>1.3.0</common.version>
+        <upms-mapper.version>1.3.0</upms-mapper.version>
+        <upms-api.version>1.3.0</upms-api.version>
+
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>${spring.platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Dubbo dependencies -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <profiles>
+        <profile>
+            <!-- 生产环境 -->
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+            </properties>
+        </profile>
+        <profile>
+            <!-- 本地开发环境 -->
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!-- 测试环境 -->
+            <id>test</id>
+            <properties>
+                <profileActive>test</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                    <include>application.properties</include>
+                    <include>application-${profileActive}.properties</include>
+                    <include>application.yml</include>
+                    <include>application-${profileActive}.yml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${maven.compiler.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <!--打包跳过测试-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
